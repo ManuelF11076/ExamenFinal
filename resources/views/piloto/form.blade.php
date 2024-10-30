@@ -21,11 +21,24 @@
             <input type="text" name="sexo" class="form-control @error('sexo') is-invalid @enderror" value="{{ old('sexo', $piloto?->sexo) }}" id="sexo" placeholder="Sexo">
             {!! $errors->first('sexo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
-        <div class="form-group mb-2 mb20">
-            <label for="sede_id" class="form-label">{{ __('Sede Id') }}</label>
-            <input type="text" name="sede_id" class="form-control @error('sede_id') is-invalid @enderror" value="{{ old('sede_id', $piloto?->sede_id) }}" id="sede_id" placeholder="Sede Id">
-            {!! $errors->first('sede_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
+        @php
+    use App\Models\PilotoSede;
+    $sedes = PilotoSede::all(); // Obtén todas las sedes del modelo
+@endphp
+
+<div class="form-group mb-2 mb20">
+    <label for="sede_id" class="form-label">{{ __('Sede Id') }}</label>
+    <select name="sede_id" class="form-control @error('sede_id') is-invalid @enderror" id="sede_id">
+        <option value="">{{ __('Seleccione una Sede') }}</option>
+        @foreach ($sedes as $sede)
+            <option value="{{ $sede->id }}" {{ old('sede_id', $piloto?->sede_id) == $sede->id ? 'selected' : '' }}>
+                {{ $sede->nombre }}
+            </option>
+        @endforeach
+    </select>
+    {!! $errors->first('sede_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+</div>
+
 
     </div>
     <div class="col-md-12 mt20 mt-2">
