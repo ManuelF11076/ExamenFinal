@@ -10,4 +10,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource("direcciones",App\Http\Controllers\DireccioneController::class);
+Route::resource("piloto-sedes",App\Http\Controllers\PilotoSedeController::class);
 // Route::resource('direcciones', DireccionController::class);
