@@ -1,13 +1,11 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
-@section('title', 'Dashboard')
-
-@section('content_header')
-    <h1>Dashboard</h1>
-@stop
+@section('template_title')
+    Piloto Viajes
+@endsection
 
 @section('content')
-<div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -15,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Piloto Sedes') }}
+                                {{ __('Piloto Viajes') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('piloto-sedes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('piloto-viajes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -38,24 +36,26 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Nombre</th>
+									<th >Observacion</th>
 									<th >Direccion Id</th>
+									<th >Piloto Id</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($pilotoSedes as $pilotoSede)
+                                    @foreach ($pilotoViajes as $pilotoViaje)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $pilotoSede->nombre }}</td>
-										<td >{{ $pilotoSede->direccion_id }}</td>
+										<td >{{ $pilotoViaje->observacion }}</td>
+										<td >{{ $pilotoViaje->direccion_id }}</td>
+										<td >{{ $pilotoViaje->piloto_id }}</td>
 
                                             <td>
-                                                <form action="{{ route('piloto-sedes.destroy', $pilotoSede->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('piloto-sedes.show', $pilotoSede->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('piloto-sedes.edit', $pilotoSede->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('piloto-viajes.destroy', $pilotoViaje->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('piloto-viajes.show', $pilotoViaje->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('piloto-viajes.edit', $pilotoViaje->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -68,17 +68,8 @@
                         </div>
                     </div>
                 </div>
-                {!! $pilotoSedes->withQueryString()->links() !!}
+                {!! $pilotoViajes->withQueryString()->links() !!}
             </div>
         </div>
     </div>
-@stop
-
-@section('css')
-    {{-- Add here extra stylesheets --}}
-    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
-@stop
-
-@section('js')
-    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
-@stop
+@endsection
