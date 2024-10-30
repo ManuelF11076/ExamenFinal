@@ -39,8 +39,8 @@
                                     {{ $piloto->sexo }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Piloto Id:</strong>
-                                    {{ $piloto->piloto_id }}
+                                    <strong>Sede Id:</strong>
+                                    {{ $piloto->sede_id }}
                                 </div>
 
                     </div>

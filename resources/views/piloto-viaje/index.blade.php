@@ -51,8 +51,8 @@
                                             <td>{{ ++$i }}</td>
                                             
 										<td >{{ $pilotoViaje->observacion }}</td>
-										<td >{{ $pilotoViaje->direccion_id }}</td>
-										<td >{{ $pilotoViaje->piloto_id }}</td>
+										<td >{{ $pilotoViaje->direccione->nombre }}</td>
+										<td >{{ $pilotoViaje->piloto->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('piloto-viajes.destroy', $pilotoViaje->id) }}" method="POST">

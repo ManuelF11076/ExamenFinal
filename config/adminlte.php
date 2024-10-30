@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Examen</b>Tezo',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -321,28 +321,24 @@ return [
             'text' => 'Pilotos Sedes',
             'url' => 'piloto-sedes',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
             'label_color' => 'success',
         ],
         [
             'text' => 'Pilotos Viajes',
             'url' => 'piloto-viajes',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
             'label_color' => 'success',
         ],
         [
             'text' => 'Pilotos',
             'url' => 'pilotos',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
             'label_color' => 'success',
         ],
         [
             'text' => 'Direcciones',
             'url' => 'direcciones',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
             'label_color' => 'success',
         ],
     ],

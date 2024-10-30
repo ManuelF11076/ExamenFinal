@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('sexo', 50);
             $table->timestamps();
             $table->softDeletes();
-            $table->unsignedInteger('piloto_id')->index('fk_pilotos_piloto_sedes_idx');
+            $table->unsignedInteger('sede_id')->index('fk_pilotos_piloto_sedes_idx');
         });
     }
 

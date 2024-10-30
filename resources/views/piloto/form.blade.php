@@ -22,9 +22,9 @@
             {!! $errors->first('sexo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="piloto_id" class="form-label">{{ __('Piloto Id') }}</label>
-            <input type="text" name="piloto_id" class="form-control @error('piloto_id') is-invalid @enderror" value="{{ old('piloto_id', $piloto?->piloto_id) }}" id="piloto_id" placeholder="Piloto Id">
-            {!! $errors->first('piloto_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="sede_id" class="form-label">{{ __('Sede Id') }}</label>
+            <input type="text" name="sede_id" class="form-control @error('sede_id') is-invalid @enderror" value="{{ old('sede_id', $piloto?->sede_id) }}" id="sede_id" placeholder="Sede Id">
+            {!! $errors->first('sede_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 
     </div>

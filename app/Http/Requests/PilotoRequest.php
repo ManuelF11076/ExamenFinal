@@ -26,7 +26,7 @@ class PilotoRequest extends FormRequest
 			'telefono' => 'required|string',
 			'dpi' => 'required|string',
 			'sexo' => 'required|string',
-			'piloto_id' => 'required',
+			'sede_id' => 'required',
         ];
     }
 }

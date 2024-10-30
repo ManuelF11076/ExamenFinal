@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $created_at
  * @property $updated_at
  * @property $deleted_at
- * @property $piloto_id
+ * @property $sede_id
  *
  * @property PilotoSede $pilotoSede
  * @property PilotoViaje[] $pilotoViajes
@@ -34,7 +34,7 @@ class Piloto extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['nombre', 'telefono', 'dpi', 'sexo', 'piloto_id'];
+    protected $fillable = ['nombre', 'telefono', 'dpi', 'sexo', 'sede_id'];
 
 
     /**
@@ -42,7 +42,7 @@ class Piloto extends Model
      */
     public function pilotoSede()
     {
-        return $this->belongsTo(\App\Models\PilotoSede::class, 'piloto_id', 'id');
+        return $this->belongsTo(\App\Models\PilotoSede::class, 'sede_id', 'id');
     }
     
     /**
