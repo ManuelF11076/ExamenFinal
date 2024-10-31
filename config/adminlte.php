@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>Examen</b>Tezo',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'https://cdn5.dibujos.net/dibujos/pintados/201738/un-ordenador-portatil-la-casa-la-habitacion-11143845.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
