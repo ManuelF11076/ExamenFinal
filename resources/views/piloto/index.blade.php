@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Piloto</h1>
 @stop
 
 @section('content')
@@ -20,7 +20,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('pilotos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -43,6 +43,7 @@
 									<th >Dpi</th>
 									<th >Sexo</th>
 									<th >Sede Id</th>
+                                    
 
                                         <th></th>
                                     </tr>
@@ -57,14 +58,15 @@
 										<td >{{ $piloto->dpi }}</td>
 										<td >{{ $piloto->sexo }}</td>
 										<td >{{ $piloto->pilotoSede->nombre }}</td>
+                                        
 
                                             <td>
                                                 <form action="{{ route('pilotos.destroy', $piloto->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('pilotos.show', $piloto->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('pilotos.edit', $piloto->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('pilotos.show', $piloto->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('pilotos.edit', $piloto->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Modificar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Esta seguro que desea Eliminar?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

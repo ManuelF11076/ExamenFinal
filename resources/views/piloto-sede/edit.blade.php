@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Modificar</h1>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Piloto Sede</span>
+                        <span class="card-title">{{ __('') }} Piloto Sede</span>
                     </div>
                     <div class="card-body bg-white">
                         <form method="POST" action="{{ route('piloto-sedes.update', $pilotoSede->id) }}"  role="form" enctype="multipart/form-data">

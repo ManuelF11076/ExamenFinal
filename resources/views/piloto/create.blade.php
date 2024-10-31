@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Crear</h1>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Piloto</span>
+                        <span class="card-title">{{ __('Crear') }} Piloto</span>
                     </div>
                     <div class="card-body bg-white">
                         <form method="POST" action="{{ route('pilotos.store') }}"  role="form" enctype="multipart/form-data">

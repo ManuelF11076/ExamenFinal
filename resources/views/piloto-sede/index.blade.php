@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Sedes</h1>
 @stop
 
 @section('content')
@@ -20,7 +20,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('piloto-sedes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -50,15 +50,15 @@
                                             <td>{{ ++$i }}</td>
                                             
 										<td >{{ $pilotoSede->nombre }}</td>
-										<td >{{ $pilotoSede->direccione->nombre }}</td>
+										
 
                                             <td>
                                                 <form action="{{ route('piloto-sedes.destroy', $pilotoSede->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('piloto-sedes.show', $pilotoSede->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('piloto-sedes.edit', $pilotoSede->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('piloto-sedes.show', $pilotoSede->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('piloto-sedes.edit', $pilotoSede->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Modificar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Estas Seguro que quieres eliminarlo?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

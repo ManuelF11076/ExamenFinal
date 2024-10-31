@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>SEDES</h1>
 @stop
 
 @section('content')
@@ -13,11 +13,12 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Piloto Sede</span>
+                        <span class="card-title">{{ __('Crear') }} Piloto Sede</span>
                     </div>
                     <div class="card-body bg-white">
                         <form method="POST" action="{{ route('piloto-sedes.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
+                            
 
                             @include('piloto-sede.form')
 
