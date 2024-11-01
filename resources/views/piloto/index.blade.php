@@ -57,8 +57,8 @@
 										<td >{{ $piloto->telefono }}</td>
 										<td >{{ $piloto->dpi }}</td>
 										<td >{{ $piloto->sexo }}</td>
-										<td >{{ $piloto->pilotoSede->nombre }}</td>
-                                        
+										<td >{{ $piloto->pilotoSede->nombre ?? 'Sin Dirección' }}</td>
+                                       
 
                                             <td>
                                                 <form action="{{ route('pilotos.destroy', $piloto->id) }}" method="POST">

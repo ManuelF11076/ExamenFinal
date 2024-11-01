@@ -44,7 +44,7 @@
 
         /* Aplica la imagen de fondo a la sección principal del contenido */
         .content-wrapper {
-            background-image: url('https://i.blogs.es/0a94cd/dragon-ball-z-kai/1366_2000.jpeg');
+            background-image: url('https://www.freejpg.com.ar/asset/900/66/662e/F100004697.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

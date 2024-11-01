@@ -39,31 +39,35 @@
                                         <th>No</th>
                                         
 									<th >Observacion</th>
-									<th >Direccion Id</th>
 									<th >Piloto Id</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($pilotoViajes as $pilotoViaje)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-										<td >{{ $pilotoViaje->observacion }}</td>
-										<td >{{ $pilotoViaje->piloto->nombre }}</td>
+                                @foreach ($pilotoViajes as $pilotoViaje)
+    <tr>
+        <td>{{ ++$i }}</td>
+        <td>{{ $pilotoViaje->observacion }}</td>
+        <td>{{ $pilotoViaje->piloto?->nombre }}</td> <!-- Acceso seguro a la relación -->
+        <td>
+            <form action="{{ route('piloto-viajes.destroy', $pilotoViaje->id) }}" method="POST">
+                <a class="btn btn-sm btn-primary" href="{{ route('piloto-viajes.show', $pilotoViaje->id) }}">
+                    <i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}
+                </a>
+                <a class="btn btn-sm btn-success" href="{{ route('piloto-viajes.edit', $pilotoViaje->id) }}">
+                    <i class="fa fa-fw fa-edit"></i> {{ __('Modificar') }}
+                </a>
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('¿Estás seguro que deseas eliminar?') ? this.closest('form').submit() : false;">
+                    <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}
+                </button>
+            </form>
+        </td>
+    </tr>
+@endforeach
 
-                                            <td>
-                                                <form action="{{ route('piloto-viajes.destroy', $pilotoViaje->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('piloto-viajes.show', $pilotoViaje->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('piloto-viajes.edit', $pilotoViaje->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Modificar') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Estas Seguro que deseas Eliminar?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

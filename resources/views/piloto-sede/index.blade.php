@@ -39,7 +39,7 @@
                                         <th>No</th>
                                         
 									<th >Nombre</th>
-									<th >Direccion Id</th>
+									<th >Direccion</th>
 
                                         <th></th>
                                     </tr>
@@ -50,7 +50,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 										<td >{{ $pilotoSede->nombre }}</td>
-										
+										<td >{{ $pilotoSede->direccione?->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('piloto-sedes.destroy', $pilotoSede->id) }}" method="POST">
